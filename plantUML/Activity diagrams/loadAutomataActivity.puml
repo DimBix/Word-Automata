@@ -1,0 +1,12 @@
+@startuml
+skinparam dpi 400
+start
+:mostra finestra esplora file;
+:seleziona file;
+if(file selezionato compatibile) then(sì)
+:carica automa;
+else(no)
+:visualizza popup di errore;
+endif
+stop
+@enduml

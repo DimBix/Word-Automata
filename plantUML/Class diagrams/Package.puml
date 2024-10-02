@@ -1,0 +1,53 @@
+    @startuml
+    skinparam dpi 300
+    skinparam Linetype ortho
+
+    package it.univr {
+        rectangle Main
+        rectangle App
+        package Controller {
+            package panes {
+                rectangle GraphSidePane
+                rectangle MagicLayoutSidePane
+                rectangle MainPane 
+                rectangle SolutionPane
+            } 
+            package smallComponents {
+                rectangle PathEdgeNode
+                rectangle PathVertexNode
+                rectangle IconButton
+            }
+            package popups {
+                rectangle ClosePopup
+                rectangle ConfirmPopup
+                rectangle EdgePopup
+                rectangle ErrorPopup
+                rectangle TutorialPopup
+                rectangle VertexPopup
+            }   
+        } 
+        
+        package backend {
+            rectangle PathFinder 
+            rectangle GraphToFile
+            rectangle GraphSaver
+            rectangle SceneReference 
+        }
+       
+        Main .up-> App : <<launch>>
+        App .> MainPane
+        MainPane *--> SolutionPane
+        GraphSidePane <-* MainPane
+        MainPane *-right-> MagicLayoutSidePane
+        panes -down- popups
+        SolutionPane .-> PathEdgeNode
+        SolutionPane .-> PathVertexNode
+        SolutionPane .-right-> PathFinder
+        Controller .up-> SceneReference
+        MainPane *--> IconButton
+        GraphSaver .-left-> GraphToFile
+        MainPane .-up-> GraphSaver
+    
+        
+    }
+    @enduml

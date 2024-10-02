@@ -1,0 +1,20 @@
+@startuml
+package it.univr {
+    skinparam classAttributeIconSize 0
+    class Main {
+        +main(args: String[]): void
+    }
+    class App {
+        - Stage stage
+        - Scene scene
+        - MainPane mainPane
+        - static boolean isDarkMode
+        + void start(Stage stage) throws IOException
+        + void changeTheme()
+        + static boolean isDarkMode()
+        + void runApp(String[] args)
+    }
+    Main .-> App : <<launch>>
+}
+
+@enduml

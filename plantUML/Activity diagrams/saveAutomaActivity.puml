@@ -1,0 +1,15 @@
+@startuml
+skinparam dpi 400
+start 
+:mostra finestra esplora file;
+repeat
+:inserire nome file;
+    if (file esiste già?) then (no)
+      break
+    endif
+    ->sì;
+repeat while (sovrascrivere file?) is (no) not (sì)
+
+:salvataggio file;
+stop
+@enduml

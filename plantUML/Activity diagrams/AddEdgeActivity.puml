@@ -1,0 +1,9 @@
+@startuml
+skinparam dpi 400
+start
+:visualizza popup transizione;
+repeat
+:inserisci nome transizione;
+repeat while(nome disponibile) is(no) not(sì)
+stop
+@enduml
