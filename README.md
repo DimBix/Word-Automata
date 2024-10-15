@@ -9,5 +9,6 @@ To run the software you will need, Java21+ and JavaFX.
 - Compile: **`src/main/java/it/univr/Main.java`**
 - Run it
 
-## **
+## **Documentation**
+In the repository you can find the pdf of the project documentation (in italian...translation in progress) with UML diagrams and a detailed description of the software structure.
 
